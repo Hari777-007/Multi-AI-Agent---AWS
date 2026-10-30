@@ -1,0 +1,8 @@
+*.sh    text eol=lf
+*.toml  text eol=lf
+*.sql   text eol=lf
+*.yml   text eol=lf
+*.py    text eol=lf
+*.bat   text eol=crlf  # this helps git to handle line endings correctly for Windows batch files
+*.html  text eol=lf
+*.tf    text eol=lf
