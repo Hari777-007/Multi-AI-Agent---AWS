@@ -14,7 +14,7 @@ from fastapi.responses import HTMLResponse
 # - send_prompt_async now receives Message instead of PromptRequestResponse
 from pyrit.setup import initialize_pyrit_async, SQLITE
 
-TARGET_URL = os.environ.get("TARGET_URL", "http://app:8000")
+TARGET_URL = os.environ.get("TARGET_URL", "http://research-agent-alb-1293790435.us-east-1.elb.amazonaws.com:8001")
 REDIS_URL = os.environ.get("REDIS_URL", "")
 RESULTS_KEY = "pyrit:results"
 RESULTS_TTL = 86400 * 7  # 7 days
