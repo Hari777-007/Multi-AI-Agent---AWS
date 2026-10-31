@@ -664,7 +664,7 @@ resource "aws_secretsmanager_secret_version" "config" {
 
     # Infrastructure endpoints
     REDIS_URL        = "redis://${aws_elasticache_cluster.redis.cache_nodes[0].address}:6379"
-    TENSORZERO_URL   = "http://localhost:3000"
+    TENSORZERO_URL   = "http://localhost:3000" #because the tenzor zero is running in the same task.
     DATABASE_URL     = "postgresql://dbadmin:${random_password.db_password.result}@${aws_db_instance.postgres.endpoint}/researchdb"
 
     # Tunable parameters (all have safe defaults in config.py)
