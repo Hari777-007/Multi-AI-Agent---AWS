@@ -61,7 +61,6 @@ async def _process_job(data: dict, msg_id: str):
     log = logging.getLogger(f"job.{job_id[:8]}")
     try:
         log.info(f"Starting job for topic: {topic}")
-
         
 
 
@@ -177,7 +176,7 @@ async def health():
     }
 
 
-@app.post("/research", dependencies=[Depends(_rate_limit)])
+@app.post("/research", dependencies=[Depends(require_api_key), Depends(_rate_limit)])
 async def start_research(req: ResearchRequest):
     ok, reason = await validate_input(config, req.topic)
     if not ok:
